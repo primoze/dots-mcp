@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.146554807/PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.146554807/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.146554807/PATH/value=/usr/local/Cellar/avr-binutils/2.25/bin\:/usr/local/Cellar/avr-gcc/6.2.0/bin\:/usr/bin\:/bin\:/usr/sbin\:/sbin
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.146554807/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.146554807/appendContributed=true
