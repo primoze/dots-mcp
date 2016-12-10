@@ -8,15 +8,16 @@
 
 namespace os {
 
-typedef char* cstring_t;
+typedef const char* cstring_t;
 
-class __flash_string_t;
-typedef const __flash_string_t* flash_cstring_t;
+class __flash_cstring_t;
+typedef const __flash_cstring_t* flash_cstring_t;
 
 
 }
 
-#define OS_FSTR(str) (reinterpret_cast<const os::__flash_string_t*>(PSTR(str)))
+#define OS_MK_FSTR(str) reinterpret_cast<os::flash_cstring_t>(PSTR(str))
+#define OS_FSTR(str) reinterpret_cast<os::flash_cstring_t>(str)
 
 
 #endif // OS_CSTRING_H

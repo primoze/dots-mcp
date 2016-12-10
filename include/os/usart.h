@@ -5,25 +5,36 @@
 #include <avr/interrupt.h>
 #include <os/common.h>
 #include <os/cstring.h>
+#include <os/bits.h>
+
 
 namespace os {
+namespace usart {
 
-	void USART_Init(uint32_t rate);
+void init(uint32_t rate);
 
-	// Write a single byte.
-	void USART_Tx(byte_t data);
+// Write a single byte.
+void transmit(byte_t data);
 
-	// Write buffer
-	int USART_Tx(const byte_t* buf, uint16_t count);
+// Write buffer
+int transmit(const byte_t* buf, uint16_t count);
 
-	// Write flash string
-	int USART_Tx(os::flash_cstring_t str);
+// Write flash string
+int transmit(os::flash_cstring_t str);
 
-	// Read a single byte.
-	void USART_Rx(byte_t& data);
+// Read a single byte.
+void receive(byte_t& data);
 
-	// Read buffer
-	int USART_Rx(byte_t* buf, uint16_t count);
+// Read buffer
+int receive(byte_t* buf, uint16_t count);
+
+// Writer for os::stream
+class writer {
+public:
+    bool write(const byte_t b);
+};
+
+}
 }
 
 
