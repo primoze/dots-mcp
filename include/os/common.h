@@ -25,6 +25,8 @@ typedef volatile byte_t ioreg_t;
 typedef volatile uint16_t * const pioreg16_t;
 typedef volatile uint16_t const ioreg16_t;
 
+typedef void (*isr_t)(void);
+
 OS_INLINE
 void panic() __attribute__((noreturn));
 

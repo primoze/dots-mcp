@@ -78,6 +78,7 @@ public:
         return true;
     }
 
+private:
     pioreg_t ucsra;
     pioreg_t ucsrb;
     pioreg_t ucsrc;
