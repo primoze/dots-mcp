@@ -17,6 +17,7 @@
 #define OS_PACKED __attribute__((packed))
 
 typedef uint8_t byte_t;
+typedef uint16_t ioaddr_t;
 
 typedef volatile byte_t * const pioreg_t;
 typedef volatile byte_t ioreg_t;
@@ -28,8 +29,6 @@ OS_INLINE
 void panic() __attribute__((noreturn));
 
 namespace os {
-
-    constexpr int EINVAL = 1;
 
 }
 

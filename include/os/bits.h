@@ -7,9 +7,7 @@
 
 namespace os {
 
-/*
- * Get bit 'bit' of 't'.
- */
+// Get bit 'bit' of 't'.
 template <typename T>
 OS_INLINE bool get_bit(T& t, byte_t bit);
 
@@ -18,6 +16,7 @@ bool get_bit(T& t, byte_t bit) {
     return t & (T)_BV(bit);
 }
 
+// Get 'mask' << 'bit' of 't'
 template <typename T, typename U>
 OS_INLINE T get_mask(T& t, const U& mask, byte_t bit, bool shift = true);
 
@@ -27,9 +26,8 @@ T get_mask(T& t, const U& mask, byte_t bit, bool shift) {
     return shift ? (T)(ret >> bit) : ret;
 }
 
-/*
- * Set bit 'bit' of 't'.
- */
+
+// Set bit 'bit' of 't'.
 template <typename T>
 OS_INLINE void set_bit(T& t, byte_t bit);
 
@@ -38,9 +36,8 @@ void set_bit(T& t, byte_t bit) {
   t |= (T)_BV(bit);
 }
 
-/*
- * Mask 't' with 'mask' shifted by 'bit'
- */
+
+// Mask 't' with 'mask' << 'bit'
 template <typename T, typename U>
 OS_INLINE void set_mask(T& t, const U& mask, byte_t bit);
 
@@ -50,9 +47,8 @@ void set_mask(T& t, const U& mask, byte_t bit) {
 }
 
 
-/*
- * Clear bit 'bit' of 't'.
- */
+
+// Clear bit 'bit' of 't'.
 template <typename T>
 OS_INLINE void clear_bit(T& t, byte_t bit);
 
@@ -61,9 +57,7 @@ void clear_bit(T& t, byte_t bit) {
   t &= (T)~_BV(bit);
 }
 
-/*
- * Unmask 't' with 'mask' shifted by 'bit'
- */
+// Unmask 't' with 'mask' << 't'
 template <typename T, typename U>
 OS_INLINE void clear_mask(T& t, const U& mask, byte_t bit);
 

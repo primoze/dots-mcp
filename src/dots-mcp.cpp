@@ -12,17 +12,20 @@
 
 
 
-os::io::stream<os::usart::writer> stream;
+os::io::stream<os::usart::usart0_writer_t> stream;
+
+
 
 OS_C_ABI
 int main(void) {
 
-    auto os = OS_MK_FSTR("dots-mcp v0.0.1\n");
+    using os::usart::usart0;
+    os::flash_cstring_t os = OS_MK_FSTR("dots-mcp v0.0.1\n");
 
 	cli();
-	os::usart::init(9600);
+	usart0.init(9600);
 
-	stream.write(os);
+    stream.write(os);
 
     panic();
 }
