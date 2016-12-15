@@ -1,0 +1,3 @@
+[submodule "include/dots-core"]
+	path = include/dots-core
+	url = git@github.com:primoze/dots-core.git
